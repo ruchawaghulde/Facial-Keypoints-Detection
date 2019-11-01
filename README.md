@@ -2,7 +2,7 @@
 
 ## By Luis, Siddharth and Rucha
 
-EE-628-A Deep Learning: Final Project using PyTorch.
+**EE-628-A Deep Learning: Final Project using PyTorch.**
 * The link :- https://www.kaggle.com/c/facial-keypoints-detection/overview.
 
 ## 1. MOTIVATION:
@@ -61,7 +61,7 @@ So, this data pre-processing step will include loading and reading the dataset a
 
 ## 5.	APPLICATIONS:
 
-Some of the applications related to Facial Keypoints Detection are as follows:
+Some of the applications of Facial Keypoints Detection are as follows:
 
 • **Prevent Retail Crime**<br/>
 
