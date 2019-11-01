@@ -15,7 +15,7 @@ We specifically chose the Facial Keypoint Detection project because it will give
 
 ## INTRODUCTION: 
 
-In this project we are going to address the problem proposed above by creating a model that can detect the facial features from the image dataset. The main goal is to obtain the coordinates of eyes, eyebrows, nose and mouth in the picture. These coordinates are known as keypoints. In order to be more specific about the location and orientation of these keypoints, it will be necessary in some cases to assign more than one keypoint for each facial feature. This way, the face of the subject can be perfectly defined. For this dataset, our model will provide the following coordinates:
+In this project we are going to address the problem proposed above by creating a model that can detect the facial features from the image dataset. The main goal is to obtain the coordinates of eyes, eyebrows, nose and mouth in the picture. These coordinates are known as keypoints. In order to be more specific about the location and orientation of these keypoints, it will be necessary in some cases to assign more than one keypoint for each facial feature. This way, the face of the subject can be perfectly defined. For this dataset, our model will provide the following keypoints:
 
 1)	**Eyes**: For both eyes the model will predict three coordinates corresponding to the center, inner and outer parts of the eyes.
 2)	**Eyebrows**: For this feature the model will yield two coordinates corresponding to the inner and outer side for both of the eyebrows.
