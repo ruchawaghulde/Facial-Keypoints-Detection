@@ -1,21 +1,21 @@
 # Facial-Keypoints-Detection
 
-## By Luis, Siddharth and Rucha
+## By Lois, Siddharth and Rucha
 
 EE-628-A Deep Learning: Final Project using PyTorch.
 * The link :- https://www.kaggle.com/c/facial-keypoints-detection/overview.
 
-## 1. MOTIVATION:
+## MOTIVATION:
 
-Our primary motivation for this project is our interest in applying deep learning to significant problems with relevant uses. Facial recognition is very popular biometric technique these days. Various developments have already been observed in facial recognition technologies, but there is still a huge scope and need of improvement. So, motivation came from the use of this application as building block in several applications such as tracking faces in images and videos, Analysing Facial Expressions, Detecting Dysmorphic Facial Signs for Medical Diagnosis and Biometrics/ Face Recognition. 
+Our reason for choosing this project is primarily based on our interest in applying deep learning to significant problems currently prevelant in the industry . Facial recognition is a very popular biometric technique these days. Various developments have already been observed in facial recognition technologies, but there is still a huge scope and a need for improvement. We are excited about applying the applications of Facial Key Points Detection as a building block in several applications such as tracking faces in images and videos, Analysing Facial Expressions, Detecting Dysmorphic Facial Signs for Medical Diagnosis and Biometrics/ Face Recognition. 
 
-We are motivated by the inherent challenges associated with the problem. Detecting facial keypoints is a challenging problem given variations in both facial features as well as image conditions. Facial features differ according to size, position, pose and expression, while image conditions vary with illumination and viewing angle. These abundant variations, in combination with the necessity for highly accurate coordinate predictions (e.g. the exact corner of an eye) lead us to believe it will be a deep and interesting topic.
+Detecting facial keypoints is a challenging problem given the variations in both facial features as well as image conditions. Facial features may differ according to size, position, pose and expression, while image qualtiy may vary with illumination and viewing angle. These variations, in combination with the necessity for highly accurate coordinate predictions (e.g. the exact corner of an eye) have lead us to believe that through this project we will be gaining insights about a deep and an interesting topic.
 
-We specifically chose the Facial Keypoint Detection because it will give us ample opportunity to experiment with a wide variety of approaches and neural net models to solve the problems associated with it.
+We specifically chose the Facial Keypoint Detection project because it will give us an opportunity to experiment with a wide variety of deep learning approaches, work with different neural networks and solve the problems associated with it.
 
-## 2. INTRODUCTION: 
+## INTRODUCTION: 
 
-In this project we are going to address the problem proposed above by creating a model that can detect the facial features from the image dataset. The main goal is to obtain the coordinates of eyes, eyebrows, nose and mouth in the picture. These coordinates are known as keypoints. In order to be more specific where these keypoints are located and their orientation, it will be necessary in some cases to give more than one keypoint for each facial feature, this way the face of the subject can be perfectly defined. For this dataset, our model will provide the following coordinates:
+In this project we are going to address the problem proposed above by creating a model that can detect the facial features from the image dataset. The main goal is to obtain the coordinates of eyes, eyebrows, nose and mouth in the picture. These coordinates are known as keypoints. In order to be more specific about the location and orientation of these keypoints, it will be necessary in some cases to assign more than one keypoint for each facial feature. This way, the face of the subject can be perfectly defined. For this dataset, our model will provide the following coordinates:
 
 1)	**Eyes**: For both eyes the model will predict three coordinates corresponding to the center, inner and outer parts of the eyes.
 2)	**Eyebrows**: For this feature the model will yield two coordinates corresponding to the inner and outer side for both of the eyebrows.
@@ -25,7 +25,7 @@ In this project we are going to address the problem proposed above by creating a
 In the past few years, advancements in Facial Key Points detection have been made by the application of *Deep Convolutional Neural Network* (DCNN). DCNNs have helped build state-of-the-art models for image recognition, recommender systems, natural language processing, etc. Our intention is to make use of these architectures to address this problem, trying to use different algorithms to study which are more suitable for the proposed task.
  
 
-## 3.	DATA FILES:
+## DATA FILES:
 
 The data files which we are going to use are as follows:
 
@@ -42,11 +42,11 @@ The data files which we are going to use are as follows:
 
 <img width="168" alt="submission" src="https://user-images.githubusercontent.com/50252196/68026212-6103ce00-fc85-11e9-9886-67c51d40145f.png">
 
-## 4.	IMPLEMENTATION PLAN:
+## IMPLEMENTATION PLAN:
 
 We will be using PyTorch to implement our project. Other libraries like numpy, pandas, matplotlib, etc. will be used based on our project requirements.
 The implementation workflow will be as follows:
-1)	**Data Pre-processing**: Mostly the datasets we get are not ready to be used for training since it requires some data pre-processing. We can perform data pre-processing to check if our dataset contains any missing values. If there are any missing values, we can do two things- one is that we can remove the rows having missing values and another is we can fill missing values with something. But removing the rows will reduce our dataset. So, we can go with the second option of filling missing values with something. We can use previous values in that row to fill the missing values.
+1)	**Data Pre-processing**: Mostly the datasets we get are not ready to be used for training since it requires certain amount of data pre-processing. We can perform data pre-processing to check if our dataset contains any missing values. 
 We can use this process to separate features and labels from our dataset. The image is our feature and other values are labels that we have to predict later.
 We can also reshape the images according to our requirements. 
 So, this data pre-processing step will include loading and reading the dataset and making it ready for training.
@@ -59,7 +59,7 @@ So, this data pre-processing step will include loading and reading the dataset a
 4)	**Visualizing the predictions**: We can visualize our predicted outputs to see predicted facial keypoints on the given face images.
 
 
-## 5.	APPLICATIONS:
+## APPLICATIONS:
 
 Some of the applications of Facial Keypoints Detection are as follows:
 
