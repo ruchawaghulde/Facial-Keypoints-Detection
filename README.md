@@ -5,7 +5,7 @@
 EE-628-A Deep Learning: Final Project using PyTorch.
 * The link :- https://www.kaggle.com/c/facial-keypoints-detection/overview.
 
-## 1. MOTIVATION
+## 1. MOTIVATION:
 
 Our primary motivation for this project is our interest in applying deep learning to significant problems with relevant uses. Facial recognition is very popular biometric technique these days. Various developments have already been observed in facial recognition technologies, but there is still a huge scope and need of improvement. So, motivation came from the use of this application as building block in several applications such as tracking faces in images and videos, Analysing Facial Expressions, Detecting Dysmorphic Facial Signs for Medical Diagnosis and Biometrics/ Face Recognition. 
 
@@ -25,7 +25,7 @@ In this project we are going to address the problem proposed above by creating a
 In the past few years, advancements in Facial Key Points detection have been made by the application of *Deep Convolutional Neural Network* (DCNN). DCNNs have helped build state-of-the-art models for image recognition, recommender systems, natural language processing, etc. Our intention is to make use of these architectures to address this problem, trying to use different algorithms to study which are more suitable for the proposed task.
  
 
-## 3.	DATA FILES
+## 3.	DATA FILES:
 
 The data files which we are going to use are as follows:
 
@@ -42,7 +42,8 @@ The data files which we are going to use are as follows:
 
 <img width="168" alt="submission" src="https://user-images.githubusercontent.com/50252196/68026212-6103ce00-fc85-11e9-9886-67c51d40145f.png">
 
-## 4.	IMPLEMENTATION PLAN
+## 4.	IMPLEMENTATION PLAN:
+
 We will be using PyTorch to implement our project. Other libraries like numpy, pandas, matplotlib, etc. will be used based on our project requirements.
 The implementation workflow will be as follows:
 1)	**Data Pre-processing**: Mostly the datasets we get are not ready to be used for training since it requires some data pre-processing. We can perform data pre-processing to check if our dataset contains any missing values. If there are any missing values, we can do two things- one is that we can remove the rows having missing values and another is we can fill missing values with something. But removing the rows will reduce our dataset. So, we can go with the second option of filling missing values with something. We can use previous values in that row to fill the missing values.
@@ -58,7 +59,7 @@ So, this data pre-processing step will include loading and reading the dataset a
 4)	**Visualizing the predictions**: We can visualize our predicted outputs to see predicted facial keypoints on the given face images.
 
 
-## 5.	APPLICATIONS
+## 5.	APPLICATIONS:
 
 Some of the applications related to Facial Keypoints Detection are as follows:
 
