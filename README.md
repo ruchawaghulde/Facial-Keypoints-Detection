@@ -1,6 +1,7 @@
-# Facial-Keypoints-Detection
+# Facial-Keypoints-Detection 
+(A Google Collab Project)
 
-## By Luis, Siddharth and Rucha
+## By Lois, Siddharth and Rucha
 
 EE-628-A Deep Learning: Final Project using PyTorch.
 * The link :- https://www.kaggle.com/c/facial-keypoints-detection/overview.
@@ -15,7 +16,7 @@ We specifically chose the Facial Keypoint Detection project because it will give
 
 ## INTRODUCTION: 
 
-In this project we are going to address the problem proposed above by creating a model that can detect the facial features from the image dataset. The main goal is to obtain the coordinates of eyes, eyebrows, nose and mouth in the picture. These coordinates are known as keypoints. In order to be more specific about the location and orientation of these keypoints, it will be necessary in some cases to assign more than one keypoint for each facial feature. This way, the face of the subject can be perfectly defined. For this dataset, our model will provide the following keypoints:
+In this project we have addressed the problem proposed above by creating a model that can detect the facial features from the image dataset. The main goal is to obtain the coordinates of eyes, eyebrows, nose and mouth in the picture. These coordinates are known as keypoints. In order to be more specific about the location and orientation of these keypoints, it will be necessary in some cases to assign more than one keypoint for each facial feature. This way, the face of the subject can be perfectly defined. For this dataset, our model will provide the following keypoints:
 
 1)	**Eyes**: For both eyes the model will predict three coordinates corresponding to the center, inner and outer parts of the eyes.
 2)	**Eyebrows**: For this feature the model will yield two coordinates corresponding to the inner and outer side for both of the eyebrows.
@@ -27,7 +28,7 @@ In the past few years, advancements in Facial Key Points detection have been mad
 
 ## DATA FILES:
 
-The data files which we are going to use are as follows:
+The data files which we have used are as follows:
 
 •	**training.csv**: list of training 7049 images. Each row contains the (x,y) coordinates for 15 keypoints, and image data as row-ordered list of pixels.
 
@@ -44,20 +45,45 @@ The data files which we are going to use are as follows:
 
 ## IMPLEMENTATION PLAN:
 
-We will be using PyTorch to implement our project. Other libraries like numpy, pandas, matplotlib, etc. will be used based on our project requirements.
+We have used PyTorch to implement our project along with libraries such as numpy, pandas, matplotlib, etc. will be used based on our project requirements.
 The implementation workflow will be as follows:
-1)	**Data Pre-processing**: Mostly the datasets we get are not ready to be used for training since it requires certain amount of data pre-processing. We can perform data pre-processing to check if our dataset contains any missing values. 
-We can use this process to separate features and labels from our dataset. The image is our feature and other values are labels that we have to predict later.
-We can also reshape the images according to our requirements. 
-So, this data pre-processing step will include loading and reading the dataset and making it ready for training.
+1) **EDA and Feature Engineering**:
+
+* Importing the data : Importing the json file from Kaggle which contain the username and the key for our Kaggle account.To link our Kaggle account to Google Collab, create a new API token on your Kaggle account.Creating a client by making a directory to host our Kaggle API token.After this step, use ‘kaggle competitions download -c facial-keypoints-detection’ API to import the csv and folders from the data source on Kaggle.Finally, decompress these folders to obtain our csv files.
+
+ * Data Pre-processing:Using Pandas, create data frames for our csv files and extract features which can be used in our analysis.Since our data contains some missing values, this step involves calculating, visualizing and replacing those missing values for every feature.
+ 
+ <p align = "center"><img width="600" img height="600" src="https://github.com/siddh30/Facial-Keypoints-Detection/blob/master/Observation%20Images/Missing%20Data.png"></p>
+ 
+ We have also used heat maps by Seaborn for finding the correlation between features.
+ 
+ <p align = "center"><img width="800" img height="600" src="https://github.com/siddh30/Facial-Keypoints-Detection/blob/master/Observation%20Images/HeatMaps%20for%20Correlation%20of%20features.png"></p>
+ 
+Then we spilt the training into keypoints and images. Each row of keypoints data contains the (x, y) coordinates for 15 keypoints, while that of images data contains the row-ordered list of pixels.
+
+* Visualizing the input image: Creating a numpy array of the pixel values in the image column of our training dataset.
+Using matplotlib to plot the image from these pixel values.
+Using features such as left_eye_center_x, nose_tip_x, etc to plot keypoints on face images.
+Formulating a gaussian function to create heatmaps of these facial keypoints.
+
+<p align = "center"><img width="700" img height="200" src="https://github.com/siddh30/Facial-Keypoints-Detection/blob/master/Observation%20Images/sample%2Bkeypoints%2Bheatmaps.png"></p>
 
 
-2)	**Training**: For training, the algorithm which we are planning to use is *Convolutional Neural Network* (CNN). Other algorithms like *Adam* or *Stochastic Gradient Descent* will be used to minimize the loss function associated with this data.
+2)	**Training**: For training, the algorithms which we have used are **CNN** and **LeNet**. We have chosen ** RELU** to be our Activation function and our Optimizer function is **Adam** used to minimize the loss function associated with this data.
 
-3)	**Predictions**: After training our model using CNN, we can evaluate our predictions using the test dataset. This will let us know how our model will be training and decide on whether we should modify its structure or hyperparameters. This will also help us to find how our loss function behaves over time. With these initial observations, we will make changes to our model and decide the best architecture before we train for many epochs and create a final model. Then we use this final trained model to predict/ detect facial keypoints on the image.
+3)	**Predictions**: After training our model using CNN and LeNet, we have evaluated our predictions using the test dataset helping us find how our loss function behaves over time. With these initial observations. We have also used used these models to predict keypoints on images from the internet.
 
-4)	**Visualizing the predictions**: We can visualize our predicted outputs to see predicted facial keypoints on the given face images.
+4)	**Visualizing the predictions**: We have finally visualized our predicted outputs to see predicted facial keypoints on the given face images.
 
+<p align = "center"><img width="600" img height="600" src="https://github.com/siddh30/Facial-Keypoints-Detection/blob/master/Observation%20Images/validation%20images%20real%20and%20predicted%20(1).png"></p>
+
+Extending further with this implementation, we tried to take our own input image which is not necessarily a face image. We took an input image which contains a group of people. Haar cascade classifier is used for face detection in this image as shown in figure. Now we have detected the face images from our input image, we resized the face images so that it would fit our project requirements. 
+
+<p align = "center"><img width="600" img height="400" src="https://github.com/siddh30/Facial-Keypoints-Detection/blob/master/Observation%20Images/original%2Bface%20boxes.png"></p>
+
+Finally, we have applied our trained CNN and ResNet model to these detected face images. We successfully achieved facial keypoints detection of these images as shown in figure. So now we can use any image and locate keypoints on it.
+
+<p align = "center"><img width="800" img height="100" src="https://github.com/siddh30/Facial-Keypoints-Detection/blob/master/Observation%20Images/faces%2Bkeypoints.JPG"></p>
 
 ## APPLICATIONS:
 
@@ -65,24 +91,18 @@ Some of the applications of Facial Keypoints Detection are as follows:
 
 • **Prevent Retail Crime**<br/>
 
-Identifying the Facial key points can be used to instantly identify when known shoplifters, organized retail criminals or people with a history of fraud enter retail establishments. Photographs of individuals can be matched against large databases of criminals so that loss prevention and retail security professionals can be instantly notified when a shopper enters a store that prevents a threat. 
 
 • **Find Missing People**<br/>
 
-Facial key points prediction can be used to find missing children and victims of human trafficking. As long as missing individuals are added to a database, law enforcement can become alerted as soon as they are recognized by recognition model based on facial key points—be it an airport, retail store or other public space. In fact, 3000 missing children were discovered in just four days using face recognition in India!
 
 • **Protect Law Enforcement**<br/>
 
-Identifying the facial key points of criminals can help police officers instantly identify individuals in the field from a safe distance. This can help by giving them contextual data that tells them who they are dealing with and whether they need to proceed with caution. As an example, if a police officer pulls over a wanted murderer at a routine traffic stop, the officer would instantly know that the suspect may be armed and dangerous and could call for reinforcement.
+
 
 • **Smarter Advertising**<br/>
 
-Facial key point detection has the ability to make advertising more targeted by making educated guesses at people’s age and gender. It’s only a matter of time before face-recognition becomes an omni-present advertising technology. Advertisements can be based on detecting age, personality, origin and can be more focused towards these consumers. 
 
 • **Security for Phones**<br/>
 
-Unlocking Smart Phones based on making prediction and detection of facial key points can ensure faster deployment speeds as well as identifying minute differences between twins and people with identical facial features.
 
 • **Deep Fake**<br/>
-
-Tackling Deep Fake. Identifying the real image or video of a person from the fake ones developed by hackers.
